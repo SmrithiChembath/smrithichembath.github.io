@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Smrithi Chembath | Portfolio</title>
 
-  <!-- cache buster so you always see latest css -->
-  <link rel="stylesheet" href="style.css?v=3" />
+  <!-- cache buster -->
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 
 <body>
   <div class="app">
 
-    <!-- Sidebar (minimal) -->
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="brand">
-        <div class="logo">SC</div>
+        <!-- Replace SC with your photo -->
+        <img class="avatar" src="assets/profile.jpg" alt="Smrithi Chembath" />
         <div>
           <div class="name">Smrithi Chembath</div>
           <div class="role">Data Science • Analytics</div>
@@ -23,13 +24,14 @@
       </div>
 
       <nav class="nav">
-        <a class="nav-item active" href="#top">Home</a>
+        <a class="nav-item active" href="#top">Overview</a>
         <a class="nav-item" href="#projects">Projects</a>
+        <a class="nav-item" href="#skills">Skills</a>
+        <a class="nav-item" href="#experience">Experience</a>
         <a class="nav-item" href="#contact">Contact</a>
       </nav>
 
       <div class="sidebar-cta">
-        <!-- Put your actual resume file path here once uploaded -->
         <a class="btn primary" href="assets/Smrithi_Chembath_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
         <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/SmrithiChembath" target="_blank" rel="noopener">GitHub</a>
@@ -43,21 +45,42 @@
     <!-- Main -->
     <main class="main" id="top">
 
-      <!-- Hero (clean + minimal) -->
-      <section class="grid">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div>
+          <div class="title">Portfolio</div>
+          <div class="subtitle">Projects, skills, and experience</div>
+        </div>
+
+        <div class="top-actions">
+          <a class="pill" href="#projects">Projects</a>
+          <a class="pill" href="#skills">Skills</a>
+          <a class="pill ghost" href="#contact">Contact</a>
+        </div>
+      </header>
+
+      <!-- Above-the-fold dashboard -->
+      <section class="grid fold">
+
+        <!-- Intro -->
         <div class="card hero">
           <h1>Smrithi Chembath</h1>
           <p>
-            Master’s student in Data Science (UT Arlington) and Graduate Research Assistant in the College of Nursing & Health Innovation.
-            Previously a Data Analyst in Dubai, building SQL/Python pipelines and BI dashboards for decision-making.
+            Master’s student in Data Science (UT Arlington) & Graduate Research Assistant.
+            Previously a Data Analyst in Dubai building SQL/Python pipelines and BI dashboards.
           </p>
 
-          <p class="muted" style="margin-top:10px;">
-            <strong>Skills:</strong> SQL (Redshift), Python, Machine Learning, Forecasting, NLP, Computer Vision
-          </p>
+          <div class="chips">
+            <span class="chip">SQL (Redshift)</span>
+            <span class="chip">Python</span>
+            <span class="chip">ML</span>
+            <span class="chip">Forecasting</span>
+            <span class="chip">NLP</span>
+            <span class="chip">Computer Vision</span>
+          </div>
         </div>
 
-        <!-- Only TWO KPI cards -->
+        <!-- KPI Row (no “Healthcare focus”) -->
         <div class="card kpi">
           <div class="kpi-label">Experience</div>
           <div class="kpi-value">2+ years</div>
@@ -65,37 +88,63 @@
         </div>
 
         <div class="card kpi">
-          <div class="kpi-label">Current focus</div>
-          <div class="kpi-value">Healthcare</div>
-          <div class="kpi-sub">Workforce analytics research</div>
+          <div class="kpi-label">Strength</div>
+          <div class="kpi-value">End-to-End</div>
+          <div class="kpi-sub">EDA → modeling → storytelling</div>
         </div>
+
+        <div class="card kpi">
+          <div class="kpi-label">Tooling</div>
+          <div class="kpi-value">SQL + Python</div>
+          <div class="kpi-sub">BI + ML workflows</div>
+        </div>
+
+        <!-- Projects preview (compact) -->
+        <div class="card project-preview">
+          <div class="section-mini">
+            <div class="section-mini-title">Featured projects</div>
+            <a class="section-mini-link" href="#projects">View all →</a>
+          </div>
+
+          <div class="mini-list">
+            <a class="mini-item" href="#projects">
+              <div class="mini-name">Disaster Preparedness & Forecasting</div>
+              <div class="mini-meta">ML + time series</div>
+            </a>
+
+            <a class="mini-item" href="#projects">
+              <div class="mini-name">Inshorts-Style Text Summarizer</div>
+              <div class="mini-meta">NLP</div>
+            </a>
+
+            <a class="mini-item" href="#projects">
+              <div class="mini-name">Traffic Sign Detection (YOLOv5 + CBAM)</div>
+              <div class="mini-meta">Computer Vision</div>
+            </a>
+          </div>
+        </div>
+
       </section>
 
-      <!-- Projects (simple cards, no clutter) -->
+      <!-- Sections -->
       <section id="projects" class="section">
         <div class="section-head">
-          <h2>Selected Projects</h2>
-          <p>Three projects that show end-to-end work: data → model → results.</p>
+          <h2>Projects</h2>
+          <p>Selected academic and professional work with measurable outcomes.</p>
         </div>
 
         <div class="grid projects">
           <article class="card project">
             <h3>Disaster Preparedness & Forecasting Platform</h3>
-            <p>
-              County-level disaster risk prediction with weather features and time-series forecasting.
-            </p>
+            <p>County-level risk prediction with engineered weather features and forecasting.</p>
             <div class="links">
               <a href="https://github.com/SmrithiChembath" target="_blank" rel="noopener">GitHub</a>
-              <!-- Optional: link to report/results page later -->
-              <!-- <a href="projects/disaster.html">Results</a> -->
             </div>
           </article>
 
           <article class="card project">
             <h3>Inshorts-Style NLP Text Summarizer</h3>
-            <p>
-              Fine-tuned transformer summarizer with a clean inference pipeline and UI.
-            </p>
+            <p>Fine-tuned transformer summarizer with a clean inference pipeline and UI.</p>
             <div class="links">
               <a href="https://github.com/SmrithiChembath" target="_blank" rel="noopener">GitHub</a>
             </div>
@@ -103,9 +152,7 @@
 
           <article class="card project">
             <h3>Traffic Sign Detection (YOLOv5 + CBAM)</h3>
-            <p>
-              Object detection pipeline with augmentation strategy and evaluation metrics.
-            </p>
+            <p>Detection pipeline with augmentation strategy and evaluation metrics.</p>
             <div class="links">
               <a href="https://github.com/SmrithiChembath" target="_blank" rel="noopener">GitHub</a>
             </div>
@@ -113,11 +160,42 @@
         </div>
       </section>
 
-      <!-- Contact (minimal) -->
+      <section id="skills" class="section">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p>Tools and methods used across projects and research.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <ul class="list">
+              <li><strong>Languages:</strong> Python, SQL (Redshift)</li>
+              <li><strong>ML:</strong> classification, feature engineering, model evaluation</li>
+              <li><strong>Time series:</strong> forecasting (SARIMA/SARIMAX), trend analysis</li>
+              <li><strong>Visualization:</strong> dashboards, reporting, storytelling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p>Industry + research.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <ul class="list">
+              <li><strong>Graduate Research Assistant</strong> — UT Arlington (Healthcare workforce analytics)</li>
+              <li><strong>Data Analyst</strong> — Dubai (SQL/Python pipelines, BI dashboards)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="section">
         <div class="section-head">
           <h2>Contact</h2>
-          <p>Reach out — I respond quickly.</p>
+          <p>Let’s connect.</p>
         </div>
 
         <div class="grid">
