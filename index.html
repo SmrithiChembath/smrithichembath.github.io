@@ -1,278 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Smrithi Chembath | Data Science Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <title>Smrithi Chembath | Data Science Portfolio</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f0f4fb;
+      color: #0b1224;
+    }
+
+    .dashboard {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .panel {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .kpi {
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .kpi-value {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+  </style>
 </head>
 
 <body>
-  <div class="app">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="logo">SC</div>
-        <div>
-          <div class="name">Smrithi Chembath</div>
-          <div class="role">Data Science • Analytics</div>
-        </div>
+  <main class="dashboard">
+
+    <section class="panel">
+      <h1>Smrithi Chembath</h1>
+      <p>Master’s Student in Data Science – University of Texas at Arlington</p>
+    </section>
+
+    <!-- KPIs -->
+    <section class="kpi-grid">
+
+      <div class="panel kpi">
+        <div class="kpi-label">Professional Experience</div>
+        <div class="kpi-value">2+ Years</div>
+        <div class="kpi-sub">Data Analyst in Dubai</div>
       </div>
 
-      <nav class="nav">
-        <a class="nav-item active" href="#overview">Overview</a>
-        <a class="nav-item" href="#projects">Projects</a>
-        <a class="nav-item" href="#skills">Skills</a>
-        <a class="nav-item" href="#experience">Experience</a>
-        <a class="nav-item" href="#contact">Contact</a>
-      </nav>
-
-      <div class="sidebar-cta">
-        <a class="btn primary" href="#" target="_blank" rel="noopener">Download Resume</a>
-        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/SmrithiChembath" target="_blank" rel="noopener">GitHub</a>
+      <div class="panel kpi">
+        <div class="kpi-label">Primary Domain Focus</div>
+        <div class="kpi-value">Healthcare Analytics</div>
+        <div class="kpi-sub">Workforce Data Research</div>
       </div>
 
-      <div class="sidebar-foot">
-        <span class="dot"></span> Available for internships & full-time roles
+      <div class="panel kpi">
+        <div class="kpi-label">Key Strength</div>
+        <div class="kpi-value">EDA → ML → Demo</div>
+        <div class="kpi-sub">End-to-End Ownership</div>
       </div>
-    </aside>
 
-    <!-- Main -->
-    <main class="main">
+    </section>
 
-      <!-- Top bar -->
-      <header class="topbar">
-        <div>
-          <div class="title">Portfolio Dashboard</div>
-          <div class="subtitle">Recruiter-friendly view of projects, skills, and impact</div>
+    <!-- Projects -->
+    <section class="panel">
+      <h2>Featured Projects</h2>
+
+      <div class="project-cards">
+
+        <div class="panel kpi">
+          <h3>Disaster Preparedness Platform</h3>
+          <p>Machine learning + time series forecasting for U.S. county-level disaster risk.</p>
+          <a href="https://github.com/">View on GitHub</a>
         </div>
 
-        <div class="top-actions">
-          <a class="pill" href="#projects">View Projects</a>
-          <a class="pill ghost" href="#contact">Contact</a>
-        </div>
-      </header>
-
-      <!-- Overview -->
-      <section id="overview" class="grid">
-        <div class="card hero">
-          <h1>Hi, I’m Smrithi 👋</h1>
-          <p>
-            Master’s student in Data Science at UT Arlington and Graduate Research Assistant in the College of Nursing & Health Innovation.
-            Previously a Data Analyst in Dubai delivering SQL/Python insights and BI dashboards.
-          </p>
-
-          <div class="chips">
-            <span class="chip">SQL (Redshift)</span>
-            <span class="chip">Python</span>
-            <span class="chip">Machine Learning</span>
-            <span class="chip">Forecasting</span>
-            <span class="chip">NLP</span>
-            <span class="chip">Computer Vision</span>
-          </div>
+        <div class="panel kpi">
+          <h3>NLP Text Summarizer</h3>
+          <p>Fine-tuned T5 model generating compact, meaningful summaries with UI.</p>
+          <a href="https://github.com/">GitHub Repo</a>
         </div>
 
-        <!-- KPI cards -->
-        <div class="card kpi">
-          <div class="kpi-label">Experience</div>
-          <div class="kpi-value">2+ yrs</div>
-          <div class="kpi-sub">Data Analyst (Dubai)</div>
+        <div class="panel kpi">
+          <h3>Traffic Sign Detection</h3>
+          <p>YOLOv5 object detection with CBAM and augmentation strategy.</p>
+          <a href="https://github.com/">Project Code</a>
         </div>
 
-        <div class="card kpi">
-          <div class="kpi-label">Focus</div>
-          <div class="kpi-value">Healthcare</div>
-          <div class="kpi-sub">Workforce analytics research</div>
-        </div>
+      </div>
 
-        <div class="card kpi">
-          <div class="kpi-label">Strength</div>
-          <div class="kpi-value">End-to-End</div>
-          <div class="kpi-sub">EDA → Model → Demo</div>
-        </div>
+    </section>
 
-        <div class="card kpi">
-          <div class="kpi-label">Tooling</div>
-          <div class="kpi-value">BI + ML</div>
-          <div class="kpi-sub">Dashboards & deployment</div>
-        </div>
-      </section>
+  </main>
 
-      <!-- Projects -->
-      <section id="projects" class="section">
-        <div class="section-head">
-          <h2>Featured Projects</h2>
-          <p>Clickable cards with impact-first summaries.</p>
-        </div>
-
-        <div class="grid projects">
-          <article class="card project">
-            <div class="project-head">
-              <h3>Disaster Preparedness & Forecasting Platform</h3>
-              <span class="pill small">ML + Time Series</span>
-            </div>
-            <p>
-              County-level disaster risk prediction with weather features + SARIMA forecasting visualization.
-            </p>
-            <div class="meta">
-              <span class="tag">XGBoost</span>
-              <span class="tag">SMOTE</span>
-              <span class="tag">SARIMA</span>
-              <span class="tag">Maps</span>
-            </div>
-            <div class="links">
-              <a href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
-
-          <article class="card project">
-            <div class="project-head">
-              <h3>Inshorts-Style NLP Text Summarizer</h3>
-              <span class="pill small">NLP</span>
-            </div>
-            <p>
-              Fine-tuned T5 model with clean inference pipeline and a simple UI for summarization.
-            </p>
-            <div class="meta">
-              <span class="tag">Transformers</span>
-              <span class="tag">T5</span>
-              <span class="tag">Gradio</span>
-            </div>
-            <div class="links">
-              <a href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
-
-          <article class="card project">
-            <div class="project-head">
-              <h3>Traffic Sign Detection (YOLOv5 + CBAM)</h3>
-              <span class="pill small">Computer Vision</span>
-            </div>
-            <p>
-              Detection model with augmentation strategy + evaluation metrics and visual examples.
-            </p>
-            <div class="meta">
-              <span class="tag">YOLOv5</span>
-              <span class="tag">CBAM</span>
-              <span class="tag">Augmentation</span>
-            </div>
-            <div class="links">
-              <a href="#" target="_blank" rel="noopener">Results</a>
-              <a href="#" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills" class="section">
-        <div class="section-head">
-          <h2>Skills Snapshot</h2>
-          <p>Designed like an analytics dashboard (clear + scannable).</p>
-        </div>
-
-        <div class="grid skills">
-          <div class="card">
-            <h3>Core</h3>
-            <div class="bar"><span style="width: 92%"></span></div>
-            <div class="bar-label">Python • SQL • EDA • Visualization</div>
-
-            <div class="bar"><span style="width: 86%"></span></div>
-            <div class="bar-label">ML Modeling • Evaluation • Tuning</div>
-
-            <div class="bar"><span style="width: 78%"></span></div>
-            <div class="bar-label">Time Series • Forecasting</div>
-          </div>
-
-          <div class="card">
-            <h3>Applied Areas</h3>
-            <ul class="list">
-              <li>Healthcare workforce analytics (research assistantship)</li>
-              <li>Disaster risk prediction + forecasting</li>
-              <li>Transformer NLP (summarization)</li>
-              <li>Computer vision detection (YOLOv5)</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Tools</h3>
-            <div class="meta">
-              <span class="tag">Pandas</span>
-              <span class="tag">Scikit-learn</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">Statsmodels</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">Render</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience" class="section">
-        <div class="section-head">
-          <h2>Experience</h2>
-          <p>Impact bullets (what recruiters scan first).</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Graduate Research Assistant — UT Arlington</h3>
-            <p class="muted">Healthcare workforce analytics • data cleaning • survey operations</p>
-            <ul class="list">
-              <li>Standardized role titles and built data workflows for workforce research.</li>
-              <li>Supported hospital leadership mailing list creation for a national survey.</li>
-              <li>Built analysis-ready datasets with quality checks.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Data Analyst — Dubai</h3>
-            <p class="muted">SQL • Python • BI dashboards • stakeholder reporting</p>
-            <ul class="list">
-              <li>Delivered dashboards and analytics insights for business teams.</li>
-              <li>Built repeatable SQL queries and data pipelines for reporting.</li>
-              <li>Worked cross-functionally to support decisions with data.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section">
-        <div class="section-head">
-          <h2>Contact</h2>
-          <p>Easy one-click actions for recruiters.</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <div class="contact">
-              <a class="btn primary" href="mailto:smrithichembath@gmail.com">Email</a>
-              <a class="btn" href="https://github.com/SmrithiChembath" target="_blank" rel="noopener">GitHub</a>
-              <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-            <p class="muted" style="margin-top:12px;">
-              Tip: update the links above with your real LinkedIn URL and resume link.
-            </p>
-          </div>
-        </div>
-
-        <footer class="footer">
-          <span>© <span id="y"></span> Smrithi Chembath</span>
-          <span class="muted">Built with GitHub Pages</span>
-        </footer>
-      </section>
-
-    </main>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
