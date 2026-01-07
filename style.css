@@ -335,4 +335,15 @@
     .fold .kpi{ grid-column: span 4; }
     .project-preview{ grid-column: span 12; }
   }
+  /* Keep the top section from getting tall */
+.hero h1 { margin-bottom: 8px; }
+.hero p { line-height: 1.5; }
+.chips { flex-wrap: wrap; gap: 8px; }
+
+@media (min-width: 860px){
+  .topbar { margin-bottom: 14px; }
+  .fold { gap: 14px; }
+  .card { padding: 16px; }
+}
+
     
