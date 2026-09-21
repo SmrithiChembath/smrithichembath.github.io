@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smrithi Chembath · Data Scientist</title>
-<meta name="description" content="Smrithi Chembath is a data scientist and analyst in Dallas, Texas working across experimentation, machine learning, and BI.">
+<meta name="description" content="Smrithi Chembath is a data scientist in Dallas, Texas working across machine learning, causal inference, and experimentation.">
 <meta property="og:title" content="Smrithi Chembath · Data Scientist">
-<meta property="og:description" content="Experimentation, machine learning, and BI. Turning messy data into decisions.">
+<meta property="og:description" content="Machine learning, causal inference, and experimentation. Turning messy data into decisions.">
 <meta property="og:image" content="https://smrithichembath.github.io/headshot.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +164,9 @@
   .awards li:last-child { border-bottom: none; }
   .awards .mark { color: var(--accent); font-family: "Fraunces", serif; font-weight: 600; min-width: 42px; }
 
+  .awards a { text-decoration: none; }
+  .awards a:hover strong { color: var(--accent); text-decoration: underline; }
+  .awards small { color: var(--ink-3); font-size: 14px; line-height: 1.5; display: inline-block; margin-top: 2px; }
   /* contact */
   .contact { margin: 110px 0 0; padding: 72px 0; background: var(--ink); color: var(--paper); }
   .contact h2 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 16px; }
@@ -220,7 +223,7 @@
     <div>
       <div class="eyebrow">Data Scientist · Dallas, Texas</div>
       <h1>I turn messy data into <em>decisions</em>.</h1>
-      <p class="lead">I work across experimentation, machine learning, and BI, with 2+ years of industry analytics experience at a 10M+ user marketplace. Today I'm a Research Scientist at UT Arlington, leading analysis on national healthcare workforce research.</p>
+      <p class="lead">I build machine learning and causal inference models that turn messy data into decisions, with 2+ years of industry experience at a 10M+ user marketplace. Today I'm a Research Scientist at UT Arlington, leading analysis on national healthcare workforce research.</p>
       <div class="ctas">
         <a href="#work" class="btn solid">See my work</a>
         <a href="https://linkedin.com/in/smrithichembath" class="btn ghost" target="_blank" rel="noopener">LinkedIn</a>
@@ -370,9 +373,9 @@
 <section class="block" id="about">
   <div class="wrap two-col">
     <div class="about">
-      <p>I like the moment a dataset stops being rows and starts answering a question someone actually cares about.</p>
-      <p>My path runs from computer science at BITS Pilani, to two years of BI at a fast-moving marketplace, to an MS in Data Science and healthcare research at UT Arlington. Along the way I've learned that the best analysis is usually the clearest one: a trustworthy number, an honest caveat, and a recommendation.</p>
-      <p>I'm open to data science and analytics roles in Dallas, Texas or remote, especially in experimentation, marketing analytics, and product analytics.</p>
+      <p>I build models that answer the questions businesses actually care about: what caused this, what happens next, and who we should act on.</p>
+      <p>My work spans machine learning, causal inference, and forecasting, from uplift models that decide who should see an ad, to fine-tuned transformers that flag fraud, to time-series models that predict outages. I care as much about how a model is evaluated as how it is built: leakage-free validation, honest baselines, and a clear account of what the model can and can't do.</p>
+      <p>That rigor comes from two years embedded with business teams at a 10M+ user marketplace, an MS in Data Science, and research at UT Arlington, where I lead analysis for a healthcare workforce study. I'm looking for data scientist roles in Dallas, Texas or remote, focused on experimentation, causal ML, and applied machine learning.</p>
       <div class="edu">
         <div class="edu-row"><div><strong>MS, Data Science</strong><span>University of Texas at Arlington</span></div><span>2024 - 2026</span></div>
         <div class="edu-row"><div><strong>BE, Computer Science</strong><span>Birla Institute of Technology and Science, Pilani - Dubai</span></div><span>2018 - 2022</span></div>
@@ -384,10 +387,12 @@
       <div class="skills-group"><h4>ML & statistics</h4><div class="stack"><span>scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>SARIMAX</span><span>Uplift modeling</span><span>A/B test analysis</span><span>Regression</span><span>SHAP</span></div></div>
       <div class="skills-group"><h4>Deep learning & NLP</h4><div class="stack"><span>PyTorch</span><span>Hugging Face</span><span>BERT</span><span>TensorFlow</span></div></div>
       <div class="skills-group"><h4>BI & visualization</h4><div class="stack"><span>Power BI (Microsoft Certified)</span><span>Tableau</span><span>Streamlit</span><span>pandas</span><span>matplotlib</span><span>Seaborn</span></div></div>
-      <div class="skills-group"><h4>Recognition</h4>
+      <div class="skills-group"><h4>Recognition & hackathons</h4>
         <ul class="awards">
           <li><span class="mark">1st</span><span>DataQuest, UT Arlington (Gold Certificate)</span></li>
-          <li><span class="mark">✦</span><span>HackUTA 7 (CivicScribe) · Datathon 2025 (deepfake detection)</span></li>
+          <li><span class="mark">✦</span><span><a href="https://devpost.com/software/civicscribe" target="_blank" rel="noopener"><strong>HackUTA 7 · CivicScribe</strong></a><br><small>Conversational AI that walks people through complex official forms and generates the completed PDF</small></span></li>
+          <li><span class="mark">✦</span><span><a href="https://devpost.com/software/shamrock-kpw49r" target="_blank" rel="noopener"><strong>Datathon 2025 · Deepfake detection</strong></a><br><small>Classifies images as real or AI-generated across faces, animals, and vehicles</small></span></li>
+          <li><span class="mark">✦</span><span><a href="https://devpost.com/software/shamrock" target="_blank" rel="noopener"><strong>UTA Datathon 2025 · Crime trend forecasting</strong></a><br><small>Linear regression and ARIMA forecasts of historical crime data in an interactive dashboard</small></span></li>
         </ul>
       </div>
     </div>
@@ -399,7 +404,7 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Let's <em>talk</em>.</h2>
-    <p>Hiring for data science or analytics? I'd love to hear about the problems your team is working on.</p>
+    <p>Hiring a data scientist? I'd love to hear about the problems your team is working on.</p>
     <div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap">
       <a href="mailto:smrithichembath@gmail.com" class="btn solid">smrithichembath@gmail.com</a>
       <a href="https://linkedin.com/in/smrithichembath" class="btn ghost" target="_blank" rel="noopener">LinkedIn</a>
