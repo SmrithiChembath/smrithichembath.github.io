@@ -184,6 +184,12 @@
   .awards a { text-decoration: none; }
   .awards a:hover strong { color: var(--accent); text-decoration: underline; }
   .awards small { color: var(--ink-3); font-size: 14px; line-height: 1.5; display: inline-block; margin-top: 2px; }
+  .certs { list-style: none; }
+  .certs li { padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
+  .certs li:last-child { border-bottom: none; }
+  .certs strong { display: block; font-weight: 500; }
+  .certs span { color: var(--ink-3); font-size: 14px; }
+  .certs .inprog strong { color: var(--ink-2); }
   /* contact */
   .contact { margin: 110px 0 0; padding: 72px 0; background: var(--ink); color: var(--paper); }
   .contact h2 { font-size: clamp(36px, 5vw, 56px); margin-bottom: 16px; }
@@ -441,7 +447,16 @@
       <div class="skills-group"><h4>Analytics engineering</h4><div class="stack"><span>dbt</span><span>DuckDB</span><span>Git</span><span>Snowflake (in progress)</span></div></div>
       <div class="skills-group"><h4>ML & statistics</h4><div class="stack"><span>scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>SARIMAX</span><span>Uplift modeling</span><span>A/B test analysis</span><span>Regression</span><span>SHAP</span></div></div>
       <div class="skills-group"><h4>Deep learning & NLP</h4><div class="stack"><span>PyTorch</span><span>Hugging Face</span><span>BERT</span><span>TensorFlow</span></div></div>
-      <div class="skills-group"><h4>BI & visualization</h4><div class="stack"><span>Power BI (Microsoft Certified)</span><span>Tableau</span><span>Periscope</span><span>Streamlit</span><span>pandas</span><span>matplotlib</span><span>Seaborn</span></div></div>
+      <div class="skills-group"><h4>BI & visualization</h4><div class="stack"><span>Power BI</span><span>Tableau</span><span>Periscope</span><span>Streamlit</span><span>pandas</span><span>matplotlib</span><span>Seaborn</span></div></div>
+      <div class="skills-group"><h4>Certifications</h4>
+        <ul class="certs">
+          <li><strong>Generative AI: Working with Large Language Models</strong><span>LinkedIn · 2025</span></li>
+          <li><strong>Complete Guide to Power BI for Data Analysts</strong><span>Microsoft Press via LinkedIn · 2025</span></li>
+          <li><strong>Working with BigQuery</strong><span>Coursera · 2021</span></li>
+          <li><strong>Introduction to Data Science in Python</strong><span>University of Michigan · 2020</span></li>
+          <li class="inprog"><strong>Snowflake and dbt</strong><span>in progress</span></li>
+        </ul>
+      </div>
       <div class="skills-group"><h4>Recognition & hackathons</h4>
         <ul class="awards">
           <li><span class="mark">1st</span><span>DataQuest, UT Arlington (Gold Certificate)</span></li>
