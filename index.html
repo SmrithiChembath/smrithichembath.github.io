@@ -138,7 +138,7 @@
     .pipeline .step:last-child { border-bottom: none; }
   }
   /* project grid */
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .card {
     background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
     padding: 28px; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease;
@@ -359,6 +359,33 @@
       </div>
     </article>
 
+    <article class="featured">
+      <div class="body">
+        <span class="pill">NLP · Model comparison</span>
+        <h3>Twitter Sentiment Analysis</h3>
+        <p>Tweets are short, misspelled, and full of slang, so I tested what actually helps: six ways of turning text into numbers, each paired with several classifiers, on 1.6M labeled tweets from the Sentiment140 dataset.</p>
+        <ul class="results">
+          <li>A fine-tuned transformer reached <strong>92.7% accuracy</strong> (93.1% precision, 92.6% F1)</li>
+          <li>That is <strong>13 points above</strong> the best classical setup, TF-IDF with logistic regression at 79.7%</li>
+          <li>Trained embeddings (Word2Vec, GloVe, FastText) never beat plain TF-IDF, so the gain came from <strong>context, not fancier features</strong></li>
+        </ul>
+        <p class="caveat"><strong>Takeaway:</strong> a simple TF-IDF baseline is still worth building first. It set the bar, cost minutes to train, and made the transformer's gain measurable instead of assumed.</p>
+        <div class="stack"><span>scikit-learn</span><span>Hugging Face</span><span>gensim</span><span>NLTK</span><span>Gradio</span></div>
+        <div class="links">
+          <a href="https://github.com/SmrithiChembath/SentimentAnalysisForTwitterData" class="btn solid" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+      <div class="viz">
+        <svg viewBox="0 0 400 200" role="img" aria-label="Accuracy by approach: fine-tuned transformer 92.7%, TF-IDF with logistic regression 79.7%, Word2Vec 77.8%, GloVe 73%, FastText 56.5%.">
+          <g font-family="Inter, sans-serif">
+            <text x="0" y="10" font-size="12" fill="#8a8177">Test accuracy on 1.6M labeled tweets</text>
+            <text x="0" y="37" font-size="12" fill="#1f1b16" font-weight="600">Fine-tuned transformer</text><rect x="150" y="26" width="186" height="16" rx="3" fill="#7a2338"/><text x="342" y="39" font-size="12" fill="#7a2338" font-weight="600">92.7%</text><text x="0" y="71" font-size="12" fill="#5a5249" font-weight="400">TF-IDF + LogReg</text><rect x="150" y="60" width="159" height="16" rx="3" fill="#c3b6a4"/><text x="315" y="73" font-size="12" fill="#8a8177" font-weight="400">79.7%</text><text x="0" y="105" font-size="12" fill="#5a5249" font-weight="400">Word2Vec</text><rect x="150" y="94" width="156" height="16" rx="3" fill="#c3b6a4"/><text x="312" y="107" font-size="12" fill="#8a8177" font-weight="400">77.8%</text><text x="0" y="139" font-size="12" fill="#5a5249" font-weight="400">GloVe</text><rect x="150" y="128" width="146" height="16" rx="3" fill="#c3b6a4"/><text x="302" y="141" font-size="12" fill="#8a8177" font-weight="400">73.0%</text><text x="0" y="173" font-size="12" fill="#5a5249" font-weight="400">FastText</text><rect x="150" y="162" width="113" height="16" rx="3" fill="#c3b6a4"/><text x="269" y="175" font-size="12" fill="#8a8177" font-weight="400">56.5%</text>
+          </g>
+        </svg>
+        <div class="viz-cap">Every approach was trained and evaluated on the same split, so the comparison is like for like. A Gradio app runs the winning model on any sentence you type.</div>
+      </div>
+    </article>
+
     <div class="grid">
       <article class="card">
         <div class="meta">Forecasting · Time series</div>
@@ -371,13 +398,6 @@
         <h3>Disaster Risk Forecasting</h3>
         <p>Engineered temporal and geospatial features from FEMA and weather data to train an XGBoost classifier with 85% accuracy, added SARIMA trend forecasting, and delivered findings in interactive Power BI dashboards.</p>
         <div class="stack"><span>XGBoost</span><span>SARIMA</span><span>Power BI</span></div>
-      </article>
-      <article class="card">
-        <div class="meta">NLP · Model comparison</div>
-        <h3>Twitter Sentiment Analysis</h3>
-        <p>Compared a classical TF-IDF + Logistic Regression baseline with fine-tuned BERT, which reached 92% accuracy, and deployed an interactive demo.</p>
-        <div class="stack"><span>scikit-learn</span><span>BERT</span><span>Gradio</span></div>
-        <a class="more" href="https://github.com/SmrithiChembath/SentimentAnalysisForTwitterData" target="_blank" rel="noopener">View code →</a>
       </article>
     </div>
     <div class="more-link"><a href="https://github.com/SmrithiChembath" class="btn ghost" target="_blank" rel="noopener">More projects on GitHub</a></div>
