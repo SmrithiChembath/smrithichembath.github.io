@@ -120,8 +120,25 @@
   .viz svg { width: 100%; height: auto; }
   .viz-cap { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
 
+  .caveat { font-size: 15px; background: var(--paper); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+  .pipeline { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .pipeline .step { padding: 24px 24px 26px; border-right: 1px solid var(--line); }
+  .pipeline .step:last-child { border-right: none; }
+  .pipeline .n { font-family: "Fraunces", serif; color: var(--accent); font-size: 15px; font-weight: 600; }
+  .pipeline h4 { font-family: "Fraunces", serif; font-weight: 500; font-size: 19px; margin: 2px 0 6px; }
+  .pipeline p { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0; }
+  @media (max-width: 900px) {
+    .pipeline { grid-template-columns: 1fr 1fr; }
+    .pipeline .step:nth-child(2) { border-right: none; }
+    .pipeline .step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+  @media (max-width: 480px) {
+    .pipeline { grid-template-columns: 1fr; }
+    .pipeline .step { border-right: none; border-bottom: 1px solid var(--line); padding: 18px 22px; }
+    .pipeline .step:last-child { border-bottom: none; }
+  }
   /* project grid */
-  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .card {
     background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
     padding: 28px; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease;
@@ -296,14 +313,47 @@
       </div>
     </article>
 
-    <div class="grid">
-      <article class="card">
-        <div class="meta">NLP · Explainable AI</div>
+    <article class="featured">
+      <div class="body">
+        <span class="pill">NLP · Explainable AI</span>
         <h3>Fraudulent Job Posting Detector</h3>
-        <p>Fine-tuned DistilBERT on 18K job postings (5% fraud rate), reaching 90% precision and 76% recall (PR-AUC 0.86) against a TF-IDF baseline. SHAP explanations show which words drive each prediction, served through an interactive Streamlit demo.</p>
+        <p>Fake job postings are rare, which makes them easy for a model to ignore. I fine-tuned DistilBERT on 18K real job postings where only 5% are fraudulent, and paired every prediction with an explanation a reviewer can check.</p>
+        <ul class="results">
+          <li><strong>90% precision</strong>: when it flags a posting, it is almost always right</li>
+          <li><strong>76% recall</strong> of fraudulent postings, with <strong>PR-AUC 0.86</strong> on a heavily imbalanced dataset</li>
+          <li>Outperformed a <strong>TF-IDF baseline</strong>, and <strong>SHAP</strong> highlights the words behind each flag</li>
+        </ul>
+        <p class="caveat"><strong>Limitation:</strong> at 76% recall, about 1 in 4 fraudulent postings still gets through, so this works best as a first-pass filter that routes suspicious postings to a human reviewer, not as an automatic block.</p>
         <div class="stack"><span>Hugging Face</span><span>PyTorch</span><span>SHAP</span><span>Streamlit</span></div>
-        <a class="more" href="https://github.com/SmrithiChembath/Job-Posting-Fraud-NLP" target="_blank" rel="noopener">View code →</a>
-      </article>
+        <div class="links">
+          <a href="https://github.com/SmrithiChembath/Job-Posting-Fraud-NLP" class="btn solid" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+      <div class="viz">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Of every 10 postings the model flags, 9 are actually fraudulent. Of every 100 fraudulent postings, it catches 76.">
+          <g font-family="Inter, sans-serif">
+            <text x="0" y="16" font-size="13" font-weight="600" fill="#1f1b16">When it flags a posting, it is right 9 times in 10</text>
+            <text x="0" y="34" font-size="12" fill="#8a8177">Precision 90%: of 10 flagged postings</text>
+            <circle cx="11" cy="58" r="9" fill="#7a2338"/><circle cx="39" cy="58" r="9" fill="#7a2338"/><circle cx="67" cy="58" r="9" fill="#7a2338"/><circle cx="95" cy="58" r="9" fill="#7a2338"/><circle cx="123" cy="58" r="9" fill="#7a2338"/><circle cx="151" cy="58" r="9" fill="#7a2338"/><circle cx="179" cy="58" r="9" fill="#7a2338"/><circle cx="207" cy="58" r="9" fill="#7a2338"/><circle cx="235" cy="58" r="9" fill="#7a2338"/><circle cx="263" cy="58" r="9" fill="#d9cdbd"/>
+            <text x="0" y="96" font-size="11" fill="#8a8177"><tspan fill="#7a2338" font-weight="600">●</tspan> actually fraud   <tspan fill="#b3a898" font-weight="600">●</tspan> legitimate</text>
+            <line x1="0" y1="122" x2="400" y2="122" stroke="#e2d8c9"/>
+            <text x="0" y="150" font-size="13" font-weight="600" fill="#1f1b16">It catches about 3 in 4 fraudulent postings</text>
+            <text x="0" y="168" font-size="12" fill="#8a8177">Recall 76%: of 100 fraudulent postings</text>
+            <circle cx="8" cy="188" r="6.5" fill="#7a2338"/><circle cx="27" cy="188" r="6.5" fill="#7a2338"/><circle cx="46" cy="188" r="6.5" fill="#7a2338"/><circle cx="65" cy="188" r="6.5" fill="#7a2338"/><circle cx="84" cy="188" r="6.5" fill="#7a2338"/><circle cx="103" cy="188" r="6.5" fill="#7a2338"/><circle cx="122" cy="188" r="6.5" fill="#7a2338"/><circle cx="141" cy="188" r="6.5" fill="#7a2338"/><circle cx="160" cy="188" r="6.5" fill="#7a2338"/><circle cx="179" cy="188" r="6.5" fill="#7a2338"/><circle cx="198" cy="188" r="6.5" fill="#7a2338"/><circle cx="217" cy="188" r="6.5" fill="#7a2338"/><circle cx="236" cy="188" r="6.5" fill="#7a2338"/><circle cx="255" cy="188" r="6.5" fill="#7a2338"/><circle cx="274" cy="188" r="6.5" fill="#7a2338"/><circle cx="293" cy="188" r="6.5" fill="#7a2338"/><circle cx="312" cy="188" r="6.5" fill="#7a2338"/><circle cx="331" cy="188" r="6.5" fill="#7a2338"/><circle cx="350" cy="188" r="6.5" fill="#7a2338"/><circle cx="369" cy="188" r="6.5" fill="#7a2338"/><circle cx="8" cy="207" r="6.5" fill="#7a2338"/><circle cx="27" cy="207" r="6.5" fill="#7a2338"/><circle cx="46" cy="207" r="6.5" fill="#7a2338"/><circle cx="65" cy="207" r="6.5" fill="#7a2338"/><circle cx="84" cy="207" r="6.5" fill="#7a2338"/><circle cx="103" cy="207" r="6.5" fill="#7a2338"/><circle cx="122" cy="207" r="6.5" fill="#7a2338"/><circle cx="141" cy="207" r="6.5" fill="#7a2338"/><circle cx="160" cy="207" r="6.5" fill="#7a2338"/><circle cx="179" cy="207" r="6.5" fill="#7a2338"/><circle cx="198" cy="207" r="6.5" fill="#7a2338"/><circle cx="217" cy="207" r="6.5" fill="#7a2338"/><circle cx="236" cy="207" r="6.5" fill="#7a2338"/><circle cx="255" cy="207" r="6.5" fill="#7a2338"/><circle cx="274" cy="207" r="6.5" fill="#7a2338"/><circle cx="293" cy="207" r="6.5" fill="#7a2338"/><circle cx="312" cy="207" r="6.5" fill="#7a2338"/><circle cx="331" cy="207" r="6.5" fill="#7a2338"/><circle cx="350" cy="207" r="6.5" fill="#7a2338"/><circle cx="369" cy="207" r="6.5" fill="#7a2338"/><circle cx="8" cy="226" r="6.5" fill="#7a2338"/><circle cx="27" cy="226" r="6.5" fill="#7a2338"/><circle cx="46" cy="226" r="6.5" fill="#7a2338"/><circle cx="65" cy="226" r="6.5" fill="#7a2338"/><circle cx="84" cy="226" r="6.5" fill="#7a2338"/><circle cx="103" cy="226" r="6.5" fill="#7a2338"/><circle cx="122" cy="226" r="6.5" fill="#7a2338"/><circle cx="141" cy="226" r="6.5" fill="#7a2338"/><circle cx="160" cy="226" r="6.5" fill="#7a2338"/><circle cx="179" cy="226" r="6.5" fill="#7a2338"/><circle cx="198" cy="226" r="6.5" fill="#7a2338"/><circle cx="217" cy="226" r="6.5" fill="#7a2338"/><circle cx="236" cy="226" r="6.5" fill="#7a2338"/><circle cx="255" cy="226" r="6.5" fill="#7a2338"/><circle cx="274" cy="226" r="6.5" fill="#7a2338"/><circle cx="293" cy="226" r="6.5" fill="#7a2338"/><circle cx="312" cy="226" r="6.5" fill="#7a2338"/><circle cx="331" cy="226" r="6.5" fill="#7a2338"/><circle cx="350" cy="226" r="6.5" fill="#7a2338"/><circle cx="369" cy="226" r="6.5" fill="#7a2338"/><circle cx="8" cy="245" r="6.5" fill="#7a2338"/><circle cx="27" cy="245" r="6.5" fill="#7a2338"/><circle cx="46" cy="245" r="6.5" fill="#7a2338"/><circle cx="65" cy="245" r="6.5" fill="#7a2338"/><circle cx="84" cy="245" r="6.5" fill="#7a2338"/><circle cx="103" cy="245" r="6.5" fill="#7a2338"/><circle cx="122" cy="245" r="6.5" fill="#7a2338"/><circle cx="141" cy="245" r="6.5" fill="#7a2338"/><circle cx="160" cy="245" r="6.5" fill="#7a2338"/><circle cx="179" cy="245" r="6.5" fill="#7a2338"/><circle cx="198" cy="245" r="6.5" fill="#7a2338"/><circle cx="217" cy="245" r="6.5" fill="#7a2338"/><circle cx="236" cy="245" r="6.5" fill="#7a2338"/><circle cx="255" cy="245" r="6.5" fill="#7a2338"/><circle cx="274" cy="245" r="6.5" fill="#7a2338"/><circle cx="293" cy="245" r="6.5" fill="#7a2338"/><circle cx="312" cy="245" r="6.5" fill="#d9cdbd"/><circle cx="331" cy="245" r="6.5" fill="#d9cdbd"/><circle cx="350" cy="245" r="6.5" fill="#d9cdbd"/><circle cx="369" cy="245" r="6.5" fill="#d9cdbd"/><circle cx="8" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="27" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="46" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="65" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="84" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="103" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="122" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="141" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="160" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="179" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="198" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="217" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="236" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="255" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="274" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="293" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="312" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="331" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="350" cy="264" r="6.5" fill="#d9cdbd"/><circle cx="369" cy="264" r="6.5" fill="#d9cdbd"/>
+            <text x="0" y="296" font-size="11" fill="#8a8177"><tspan fill="#7a2338" font-weight="600">●</tspan> caught   <tspan fill="#b3a898" font-weight="600">●</tspan> missed</text>
+          </g>
+        </svg>
+        <div class="viz-cap">DistilBERT on held-out postings. Precision and recall matter here because accuracy alone would look high even if the model flagged nothing.</div>
+      </div>
+      <div class="pipeline">
+        <div class="step"><span class="n">01</span><h4>Clean</h4><p>Stripped HTML and URLs, then combined the title, company profile, description, requirements, and benefits into one text field.</p></div>
+        <div class="step"><span class="n">02</span><h4>Split</h4><p>Stratified 70/15/15 train, validation, and test sets, so every split keeps the same 5% fraud rate.</p></div>
+        <div class="step"><span class="n">03</span><h4>Train</h4><p>Fine-tuned DistilBERT with a class-weighted loss. Without it, a model trained on 5% fraud learns to call everything real.</p></div>
+        <div class="step"><span class="n">04</span><h4>Explain</h4><p>SHAP scores how much each word pushed a posting toward fraud or real, so a reviewer can check the reasoning.</p></div>
+      </div>
+    </article>
+
+    <div class="grid">
       <article class="card">
         <div class="meta">Forecasting · Time series</div>
         <h3>Power Outage Forecasting</h3>
